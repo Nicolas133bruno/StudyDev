@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://nicolas133bruno.github.io/StudyDev/">
-    <img src="assets/logo.png" alt="StudyDev Logo" width="180px"/>
+    <img src="logo.png" alt="StudyDev Logo" width="180px"/>
   </a>
 </div>
 
