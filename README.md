@@ -1,170 +1,118 @@
-::: {align="center"}
-`<a href="https://nicolas133bruno.github.io/StudyDev">`{=html}
-`<img src="assets/img/logo.png" alt="StudyDev Logo" width="150px"/>`{=html}
-`</a>`{=html}
-:::
+# <img src="https://nicolas133bruno.github.io/StudyDev/assets/logo.png" width="120" style="border-radius:12px" />  
+# **StudyDev — Aprenda Programação do Zero ao Avançado**
 
-`<br>`{=html}
+---
 
-```{=html}
-<p align="center">
+## 🚀 **Visão Geral**
+
+O **StudyDev** é uma plataforma aberta e gratuita criada para ajudar estudantes e iniciantes a aprender programação com trilhas organizadas, conteúdos objetivos, motivação diária e uma interface simples e direta.  
+O projeto foi desenvolvido com o propósito de ser **rápido, acessível e útil**, funcionando direto no navegador e trazendo uma experiência clara para quem deseja estudar com consistência.
+
+---
+
+## 🎯 **Diferenciais do Projeto**
+
+### 🧭 **Trilhas de estudo organizadas**
+- Conteúdos por linguagens e temas.
+- Cada card inclui: descrição, link para estudos, vídeos e informações essenciais.
+
+### 🔥 **Trilha de motivação psicopedagógica**
+- Frases motivacionais atualizadas.
+- Vídeos, reflexões e textos para manter o aluno firme mesmo em dias difíceis.
+
+### 💻 **Interface moderna e responsiva**
+- Design limpo.
+- Navegação clara.
+- Uso inteligente de cards e categorias.
+
+### ⚡ **Projeto rápido e leve**
+Não usa frameworks pesados — apenas **HTML, CSS e JavaScript puro**, carregando rápido em qualquer navegador.
+
+---
+
+## 🛠️ **Tecnologias Utilizadas**
+
+| Tecnologia | Função |
+|-----------|--------|
+| **HTML5** | Estrutura do site |
+| **CSS3**  | Estilização e responsividade |
+| **JavaScript Vanilla** | Filtragem, buscas, cards, lógica da aplicação |
+| **GitHub Pages** | Hospedagem gratuita do site |
+
+---
+
+## 📂 **Estrutura do Projeto**
+
 ```
-`<a href="https://nicolas133bruno.github.io/StudyDev" target="_blank" rel="noopener noreferrer">`{=html}
-`<img src="https://img.shields.io/badge/site-online-%23007ACC?style=flat-square&logo=google-chrome&logoColor=white" alt="Site" />`{=html}
-`</a>`{=html}
-`<a href="https://github.com/Nicolas133bruno/StudyDev/stargazers">`{=html}
-`<img src="https://img.shields.io/github/stars/Nicolas133bruno/StudyDev?color=60B4FF&logo=github&style=flat-square" alt="GitHub Stars">`{=html}
-`</a>`{=html}
-`<a href="https://github.com/Nicolas133bruno/StudyDev/forks">`{=html}
-`<img src="https://img.shields.io/github/forks/Nicolas133bruno/StudyDev?color=60B4FF&logo=github&style=flat-square" alt="GitHub Forks">`{=html}
-`</a>`{=html}
-```{=html}
-</p>
+StudyDev/
+│── assets/          # Imagens, ícones e mídias
+│── data/            # Base de dados dos cards
+│── script.js        # Lógica principal
+│── style.css        # Estilo geral do site
+│── index.html       # Página inicial
+│── README.md        # Documentação
 ```
-> \[!NOTE\] Projeto criado para participar da **Imersão Alura**,
-> destacando motivação, organização e o melhor caminho para estudar
-> programação com eficiência.
 
-# 🚀 StudyDev
+---
 
-O **StudyDev** é uma plataforma criada para organizar e facilitar a
-jornada de quem está começando ou evoluindo na programação.\
-Aqui você encontra trilhas de estudo, vídeos recomendados, conteúdos
-curados e um ambiente feito para te manter motivado todos os dias.
+## 🧩 **Principais Funcionalidades**
 
-![Preview](assets/preview.png)
+- 🔍 Busca inteligente por linguagens  
+- 🗂️ Cards automáticos carregados do arquivo JSON  
+- 🎥 Links para vídeos e playlists  
+- 🧠 Trilha de motivação diária  
+- 📘 Trilha de aprendizado para iniciantes  
+- 📱 Design adaptado para celulares e PCs  
 
-------------------------------------------------------------------------
+---
 
-## 🌍 Acesso
+## 🌟 **O que torna o StudyDev especial?**
 
-Acesse a plataforma:
+O StudyDev foi criado por um estudante para estudantes.  
+A ideia é simples:  
+> “Estudar fica mais fácil quando alguém organiza tudo para você.”
 
-    https://nicolas133bruno.github.io/StudyDev/
+O projeto incentiva estudo constante sem complicação — apenas abra o site e aprenda.
 
-------------------------------------------------------------------------
+---
 
-## 🧭 Trilhas de Estudo
+## 🏆 **Por que este projeto merece vencer na Alura?**
 
-O StudyDev oferece trilhas claras, simples e objetivas, organizadas por:
+- É **inclusivo**, gratuito e aberto.  
+- Mostra domínio em **HTML, CSS e JavaScript** real, feitos na mão, sem atalhos.  
+- Resolve um problema real de quem estuda programação:  
+  **“Não sei por onde começar.”**  
+- Combina tecnologia com **motivação e psicologia do estudo**, algo raro em projetos escolares.  
+- Tem **visual profissional**, organização limpa e código bem estruturado.  
+- Evolui com feedback real de estudantes.
 
--   Linguagens de programação\
--   Ferramentas essenciais\
--   Conteúdos base para iniciantes\
--   Materiais avançados para quem quer evoluir
+---
 
-Cada trilha tem **descrições**, **vídeos recomendados**, **links
-úteis**, e **estrutura ideal para estudar sem travar**.
+## 🔮 **Roadmap Futuro**
 
-![Trilhas](assets/trilhas.png)
+- [ ] Modo escuro  
+- [ ] Sistema de progresso do aluno  
+- [ ] Mais trilhas: SQL, Python, Front-end, DevOps  
+- [ ] Área do aluno com login  
+- [ ] API própria  
+- [ ] App mobile
 
-------------------------------------------------------------------------
+---
 
-## 💡 Motivação
+## 🤝 **Contribuindo**
 
-A plataforma inclui uma trilha exclusiva de **motivação**, feita para te
-lembrar do propósito com:
+Contribuições são bem-vindas!  
+Basta abrir um **Pull Request** ou enviar ideias na aba **Issues**.
 
--   Mensagens diárias\
--   Vídeos motivacionais\
--   Reflexões\
--   Foco em consistência e disciplina
+---
 
-> "Você não precisa saber tudo hoje. Só precisa continuar."
+## 📎 **Links Importantes**
 
-------------------------------------------------------------------------
+- 🌐 **Site:** https://nicolas133bruno.github.io/StudyDev/  
+- 📘 **Repositório:** https://github.com/Nicolas133bruno/StudyDev  
 
-## 🔧 Funcionalidades
+---
 
-  -----------------------------------------------------------------------
-  **Funcionalidade**                           **Descrição**
-  -------------------------------------------- --------------------------
-  🔍 **Busca inteligente**                     Encontre conteúdos
-                                               rapidamente.
+## 💛 **Feito com dedicação para ajudar quem está começando.**  
+Se você acredita no projeto, deixe uma ⭐ no GitHub!
 
-  🎯 **Trilhas organizadas**                   Caminhos completos para
-                                               aprender do zero ao
-                                               avançado.
-
-  🎬 **Vídeos do YouTube**                     Conteúdos selecionados e
-                                               de alta qualidade.
-
-  📘 **Cards explicativos**                    Cada tecnologia explicada
-                                               de forma simples.
-
-  ⚡ **Site rápido e leve**                    Totalmente otimizado.
-
-  👨‍💻 **Data estruturada**                      Informações organizadas em
-                                               `data.json`.
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-## 🧩 Tecnologias Utilizadas
-
--   **HTML5**
--   **CSS3**
--   **JavaScript**
--   **JSON**
--   **GitHub Pages**
-
-------------------------------------------------------------------------
-
-## 📌 Estrutura do Projeto
-
-    StudyDev/
-    │
-    ├── assets/
-    │   ├── img/
-    │   │   └── logo.png
-    │   ├── preview.png
-    │   └── trilhas.png
-    │
-    ├── data/
-    │   └── data.json
-    │
-    ├── index.html
-    ├── script.js
-    ├── style.css
-    └── README.md
-
-------------------------------------------------------------------------
-
-## 🤔 Contexto do Projeto
-
-O **StudyDev** surgiu como um projeto de estudo, organização e motivação
-para estudantes de tecnologia, criado para a **Imersão Alura**.\
-O objetivo é facilitar a entrada e o crescimento de novos programadores
-com trilhas claras e objetivas.
-
-------------------------------------------------------------------------
-
-## 💻 Melhorias Futuras
-
--   🎨 Tema claro/escuro\
--   ⭐ Sistema de progresso\
--   🔐 Login e perfil do usuário\
--   📊 Estatísticas de estudo\
--   🔔 Notificações de conteúdo\
--   🎧 Trilhas interativas por áudio
-
-------------------------------------------------------------------------
-
-## 😸 Contribuições
-
-Contribuições são super bem-vindas!
-
--   Abra issues\
--   Envie pull requests\
--   Sugira novas trilhas\
--   Ajude a organizar conteúdos
-
-------------------------------------------------------------------------
-
-## ⭐ Apoie o Projeto
-
-Se o StudyDev te ajudou, deixe uma estrela:
-
-👉 https://github.com/Nicolas133bruno/StudyDev
-
-Obrigado 💙
