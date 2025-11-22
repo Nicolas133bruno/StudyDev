@@ -1,4 +1,8 @@
-# <img src="https://nicolas133bruno.github.io/StudyDev/assets/logo.png" width="120" style="border-radius:12px" />  
+#<h1>
+  <img src="https://nicolas133bruno.github.io/StudyDev/assets/logo.png" width="60" style="border-radius:12px; vertical-align: middle;" />
+  StudyDev
+#</h1>
+
 # **StudyDev — Aprenda Programação do Zero ao Avançado**
 
 ---
