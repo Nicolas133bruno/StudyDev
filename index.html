@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudyDev – Estude Programação de forma moderna</title>
+    <meta name="description" content="StudyDev: plataforma de estudos de programação. Explore linguagens, guias, recursos e trilhas de aprendizado em um site rápido, acessível e responsivo." />
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="StudyDev – Estude Programação" />
+    <meta property="og:description" content="Aprenda linguagens de programação com catálogos, guias e recursos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header" role="banner">
+      <div class="container header__inner">
+        <a class="brand" href="#/"><img src="logo.png" alt="StudyDev" class="logo" width="40" height="40" /> StudyDev</a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#/languages" class="nav__link">Linguagens</a>
+          <a href="#/roadmaps" class="nav__link">Trilhas</a>
+          <a href="#/resources" class="nav__link">Recursos</a>
+          <a href="#/bot" class="nav__link">Bot</a>
+          <a href="#/about" class="nav__link">Sobre</a>
+          <div class="header-search" role="search">
+            <div class="header-search-box">
+              <span class="header-icon" aria-hidden="true">🔎</span>
+              <input id="header-search-input" class="header-input" type="search" placeholder="Buscar linguagens, conteúdos e trilhas…" aria-label="Buscar no site" aria-haspopup="listbox" aria-expanded="false" autocomplete="off" />
+              <ul id="header-suggestions" class="header-suggestions" role="listbox" aria-label="Sugestões"></ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" class="main container" tabindex="-1">
+      <div id="route-root" aria-live="polite"></div>
+
+      <!-- About template -->
+      <template id="about-template">
+        <section class="about">
+          <h1>Sobre o StudyDev</h1>
+          <p>O StudyDev é uma plataforma aberta para estudar programação com foco em acessibilidade, performance, responsividade e boas práticas. Sem dependências pesadas, rápido e fácil de usar.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px;">
+              <h2 style="margin-top: 0;">Missão</h2>
+              <ul>
+                <li>Organizar o conhecimento sobre linguagens e ecossistemas.</li>
+                <li>Facilitar sua jornada com trilhas e recursos curados.</li>
+                <li>Promover acessibilidade e UX excelentes para todos os níveis.</li>
+              </ul>
+            </div>
+            
+            <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px;">
+              <h2 style="margin-top: 0;">Como usar</h2>
+              <ul>
+                <li>Navegue em <strong>Linguagens</strong> e filtre pelo que precisa.</li>
+                <li>Abra os <strong>detalhes</strong> para ver metadados, casos de uso e "Hello, World".</li>
+                <li>Explore <strong>Recursos</strong> e as <strong>Trilhas</strong>.</li>
+              </ul>
+            </div>
+            
+            <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px;">
+              <h2 style="margin-top: 0;">Qualidade Técnica</h2>
+              <ul>
+                <li>Acessibilidade: semântica, foco, aria-live e skip-link.</li>
+                <li>Performance: arquitetura estática, sem frameworks pesados.</li>
+                <li>Responsividade: grid adaptativo e tema claro/escuro.</li>
+                <li>SEO básico: metatags e conteúdo estruturado.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; margin-top: 2rem;">
+            <h2>Sobre o Criador</h2>
+            <p>Meu nome é Nicolas Bruno Pereira, tenho 16 anos e atualmente estudo no IFTM - Campus Uberlândia Centro, no ensino técnico de Análise e Desenvolvimento de Sistemas.</p>
+            <p>Entre 2022 e 2023, realizei um curso na área de programação na TECHERS, em Uberlândia (MG).</p>
+            <p>Em 2025, concluí um curso introdutório de C++ na Uberhub, realizado na UFU - Campus Santa Mônica.</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Nicolas133bruno" target="_blank" rel="noopener">https://github.com/Nicolas133bruno</a></p>
+          </div>
+
+          <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; margin-top: 2rem;">
+            <h2>Contato e Comunidade</h2>
+            <p>Quer sugerir melhorias, novas linguagens ou trilhas?</p>
+            <p>
+              <a href="mailto:contato@studydev.com" style="margin-right: 1rem;">E-mail</a>
+              <a href="#/roadmaps" style="margin-right: 1rem;">Ver Trilhas</a>
+              <a href="#/resources">Ver Recursos</a>
+            </p>
+          </div>
+        </section>
+      </template>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> StudyDev. Construído com boas práticas de acessibilidade, performance e SEO.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/data.js"></script>
+    <script type="module" src="assets/router.js"></script>
+    <!-- Configuração da API de chatbot (Gemini direto). Em produção, restrinja a chave por Referer/IP. -->
+    <script>
+      window.AI_CONFIG = {
+        provider: 'gemini_direct',
+        apiKey: 'AIzaSyDV1xwHio9u0AWZLnHPZI2P5pW_pk9aHnc',
+        model: 'gemini-pro', // Adicionado para especificar o modelo Gemini
+        // Instruções para retorno APENAS em JSON, sem markdown nem texto extra
+        prompt: `Você é um arquiteto de software sênior e doutor em programação, especializado em otimização, segurança e melhores práticas. Sua tarefa é analisar o código fornecido e retornar APENAS JSON (sem markdown, sem comentários).\nFormato: {"issues":[],"suggestions":[],"fixed_code":"..."}.\nRegras:\n- "issues": Liste ERROS reais (sintaxe, API incorreta, bugs lógicos, vulnerabilidades de segurança). Para cada issue, forneça uma explicação concisa do problema, seu impacto e uma sugestão de correção.\n- "suggestions": Liste melhorias de estilo, performance, legibilidade, escalabilidade e padrões de projeto. Para cada suggestion, explique o benefício da mudança de forma concisa.\n- "fixed_code": Se houver "issues", forneça o código corrigido. Se não houver "issues", mas houver "suggestions", aplique as sugestões no código. Se não houver nem "issues" nem "suggestions", repita o código original.\n- Não inclua blocos \`\`\` nem texto fora do JSON.\n- Mantenha a linguagem em português do Brasil. Mantenha as respostas curtas e diretas.`,
+        dataJsPath: 'assets/data.js'
+      };
+    </script>
+    <script type="module" src="assets/app.js"></script>
+    <script type="module" src="assets/bot.js"></script>
+    <audio id="background-music" loop>
+      <source src="lofi.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <div style="position: fixed; bottom: 25px; right: 20px; z-index: 1000; display: flex; align-items: center; gap: 10px;">
+      <button id="toggle-timer-visibility" class="btn btn--secondary">Esconder</button>
+      <button id="music-toggle-button" class="btn btn--primary">▶️ Música</button>
+    </div>
+    <div id="study-timer" style="position: fixed; bottom: 70px; right: 20px; z-index: 1000; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+      <div id="timer-display" style="font-size: 1.2em; font-weight: bold; text-align: center; margin-bottom: 10px;">00:00:00</div>
+      <div style="display: flex; justify-content: space-around;">
+        <button id="start-timer" class="btn btn--primary">Iniciar</button>
+        <button id="pause-timer" class="btn btn--secondary">Pausar</button>
+        <button id="reset-timer" class="btn btn--danger">Resetar</button>
+      </div>
+    </div>
+
+    <script>
+      const backgroundMusic = document.getElementById('background-music');
+      const musicToggleButton = document.getElementById('music-toggle-button');
+
+      let isPlaying = false;
+
+      musicToggleButton.addEventListener('click', () => {
+        if (isPlaying) {
+          backgroundMusic.pause();
+          musicToggleButton.textContent = '▶️ Música';
+        } else {
+          backgroundMusic.play();
+          musicToggleButton.textContent = '⏸️ Música';
+        }
+        isPlaying = !isPlaying;
+      });
+
+      // Lógica do Cronômetro
+      const timerDisplay = document.getElementById('timer-display');
+      const startButton = document.getElementById('start-timer');
+      const pauseButton = document.getElementById('pause-timer');
+      const resetButton = document.getElementById('reset-timer');
+
+      let startTime;
+      let elapsedTime = 0;
+      let timerInterval;
+      let isTimerRunning = false;
+
+      function formatTime(ms) {
+        const hours = Math.floor(ms / 3600000);
+        const minutes = Math.floor((ms % 3600000) / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+
+        return [hours, minutes, seconds]
+          .map(unit => String(unit).padStart(2, '0'))
+          .join(':');
+      }
+
+      function startTimer() {
+        if (!isTimerRunning) {
+          startTime = Date.now() - elapsedTime;
+          timerInterval = setInterval(() => {
+            elapsedTime = Date.now() - startTime;
+            timerDisplay.textContent = formatTime(elapsedTime);
+          }, 1000);
+          isTimerRunning = true;
+        }
+      }
+
+      function pauseTimer() {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+      }
+
+      function resetTimer() {
+        clearInterval(timerInterval);
+        elapsedTime = 0;
+        timerDisplay.textContent = '00:00:00';
+        isTimerRunning = false;
+      }
+
+      startButton.addEventListener('click', startTimer);
+      pauseButton.addEventListener('click', pauseTimer);
+      resetButton.addEventListener('click', resetTimer);
+
+      const studyTimer = document.getElementById('study-timer');
+      const toggleTimerVisibilityButton = document.getElementById('toggle-timer-visibility');
+      let isTimerVisible = true;
+
+      toggleTimerVisibilityButton.addEventListener('click', () => {
+        if (isTimerVisible) {
+          studyTimer.style.display = 'none';
+          toggleTimerVisibilityButton.textContent = 'Mostrar';
+        } else {
+          studyTimer.style.display = 'block'; // Ou 'flex' dependendo do layout original
+          toggleTimerVisibilityButton.textContent = 'Esconder';
+        }
+        isTimerVisible = !isTimerVisible;
+      });
+
+    </script>
+  </body>
+</html>
