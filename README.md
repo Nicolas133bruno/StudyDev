@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/mnt/data/fe1e6559-7a75-4ec4-9991-cac36a0e5920.png" width="250" />
+  <img src="logo.png" width="250" />
 </p>
 
 # **StudyDev — Aprenda Programação do Zero ao Avançado**
