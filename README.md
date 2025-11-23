@@ -110,6 +110,7 @@ O StudyDev resolve o maior problema de quem está começando:
 * [ ] Login e área do aluno
 * [ ] API própria
 * [ ] Versão mobile
+* [ ] Novas linguagens no bot
 
 ---
 
