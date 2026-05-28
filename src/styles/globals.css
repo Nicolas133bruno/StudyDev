@@ -1,0 +1,80 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.6%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 89.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 240 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 89.1%;
+  --input: 0 0% 89.1%;
+  --ring: 0 0% 3.6%;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0 0% 3.6%;
+    --foreground: 0 0% 98.2%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98.2%;
+    --primary: 0 0% 98.2%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98.2%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 240 100% 60%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98.2%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-black/10 border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
