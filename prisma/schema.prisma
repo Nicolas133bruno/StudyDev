@@ -1,0 +1,315 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String    @id @default(cuid())
+  clerkId              String    @unique
+  email                String    @unique
+  firstName            String?
+  lastName             String?
+  avatar               String?
+  bio                  String?
+  theme                String    @default("dark")
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  // Relations
+  studySessions        StudySession[]
+  projects             Project[]
+  tasks                Task[]
+  flashcards           Flashcard[]
+  subjects             Subject[]
+  goals                Goal[]
+  achievements         UserAchievement[]
+  analytics            Analytics?
+  
+  @@index([clerkId])
+}
+
+model StudySession {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  subject              Subject?  @relation(fields: [subjectId], references: [id])
+  subjectId            String?
+  
+  project              Project?  @relation(fields: [projectId], references: [id])
+  projectId            String?
+  
+  duration             Int       // em segundos
+  focusStreak          Int       @default(0)
+  completed            Boolean   @default(true)
+  startedAt            DateTime
+  endedAt              DateTime
+  
+  notes                String?
+  xpGained             Int       @default(25)
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+  @@index([subjectId])
+  @@index([projectId])
+}
+
+model Project {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name                 String
+  description          String?
+  color                String    @default("#3B82F6")
+  icon                 String    @default("BookOpen")
+  
+  status               String    @default("active") // active, archived, completed
+  priority             String    @default("medium") // low, medium, high
+  
+  deadline             DateTime?
+  startDate            DateTime  @default(now())
+  
+  totalTimeStudied     Int       @default(0) // em segundos
+  progress             Float     @default(0) // percentual 0-100
+  
+  tags                 String[]  @default([])
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  // Relations
+  tasks                Task[]
+  studySessions        StudySession[]
+  files                ProjectFile[]
+  
+  @@index([userId])
+  @@index([status])
+}
+
+model Task {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  projectId            String
+  project              Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  title                String
+  description          String?
+  
+  status               String    @default("todo") // todo, doing, done
+  priority             String    @default("medium") // low, medium, high
+  
+  dueDate              DateTime?
+  estimatedTime        Int? // em minutos
+  
+  tags                 String[]  @default([])
+  assignedTo           String?
+  
+  order                Int       @default(0)
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+  @@index([projectId])
+  @@index([status])
+}
+
+model Subject {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name                 String
+  description          String?
+  color                String    @default("#10B981")
+  icon                 String    @default("BookMarked")
+  
+  totalTimeStudied     Int       @default(0) // em segundos
+  lastStudied          DateTime?
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  // Relations
+  studySessions        StudySession[]
+  flashcards           Flashcard[]
+  notes                StudyNote[]
+  
+  @@index([userId])
+}
+
+model StudyNote {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  subjectId            String
+  subject              Subject   @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  
+  title                String
+  content              String    // Markdown
+  tags                 String[]  @default([])
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+  @@index([subjectId])
+}
+
+model Flashcard {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  subjectId            String
+  subject              Subject   @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  
+  front                String    // Pergunta
+  back                 String    // Resposta
+  
+  difficulty           String    @default("medium") // easy, medium, hard
+  interval             Int       @default(1) // Spaced repetition interval (em dias)
+  easeFactor           Float     @default(2.5) // Spaced repetition ease factor
+  nextReview           DateTime  @default(now())
+  reviewCount          Int       @default(0)
+  
+  lastReviewedAt       DateTime?
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+  @@index([subjectId])
+  @@index([nextReview])
+}
+
+model Goal {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  title                String
+  description          String?
+  
+  type                 String    // daily, weekly, monthly
+  targetValue          Int       // minutos de estudo
+  currentValue         Int       @default(0)
+  
+  status               String    @default("active") // active, completed, abandoned
+  
+  startDate            DateTime  @default(now())
+  targetDate           DateTime
+  completedAt          DateTime?
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+  @@index([status])
+}
+
+model Achievement {
+  id                   String    @id @default(cuid())
+  
+  slug                 String    @unique
+  name                 String
+  description          String
+  icon                 String
+  category             String    // pomodoro, streak, level, milestone
+  
+  createdAt            DateTime  @default(now())
+}
+
+model UserAchievement {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  achievementId        String
+  achievement          Achievement @relation(fields: [achievementId], references: [id])
+  
+  unlockedAt           DateTime  @default(now())
+  
+  @@unique([userId, achievementId])
+  @@index([userId])
+}
+
+model Analytics {
+  id                   String    @id @default(cuid())
+  userId               String    @unique
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  totalHoursStudied    Int       @default(0) // em minutos
+  totalSessions        Int       @default(0)
+  currentStreak        Int       @default(0)
+  longestStreak        Int       @default(0)
+  lastSessionDate      DateTime?
+  
+  averageSessionTime   Int       @default(0) // em minutos
+  mostProductiveDay    String?   // dia da semana
+  mostProductiveHour   Int?      // hora do dia (0-23)
+  
+  levelXp              Int       @default(0)
+  level                Int       @default(1)
+  
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  
+  @@index([userId])
+}
+
+model ProjectFile {
+  id                   String    @id @default(cuid())
+  projectId            String
+  project              Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  name                 String
+  fileUrl              String
+  fileType             String
+  fileSize             Int
+  
+  uploadedAt           DateTime  @default(now())
+  
+  @@index([projectId])
+}
+
+model UserAchievement {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  achievementId        String
+  achievement          Achievement @relation(fields: [achievementId], references: [id])
+  
+  unlockedAt           DateTime  @default(now())
+  
+  @@unique([userId, achievementId])
+  @@index([userId])
+}
+
+model Achievement {
+  id                   String    @id @default(cuid())
+  
+  slug                 String    @unique
+  name                 String
+  description          String
+  icon                 String
+  category             String    // pomodoro, streak, level, milestone
+  
+  userAchievements     UserAchievement[]
+  
+  createdAt            DateTime  @default(now())
+}
